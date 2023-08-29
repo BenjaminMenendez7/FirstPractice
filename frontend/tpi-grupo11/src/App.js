@@ -6,6 +6,7 @@ import Proveedores from './components/proveedores/proveedores.jsx';
 import Productos from './components/productos/productos.jsx';
 import Empleados from './components/empleados/empleados.jsx';
 import Clientes from './components/clientes/clientes.jsx';
+import Login from './components/Login/login.jsx';
 
 function App() {
   // Componente en el cual estamos parados ahora es el 'Home' o el inicio.
@@ -37,9 +38,16 @@ function App() {
     setComponente('Home')
     console.log(`¡Se presionó el botón del inicio!`);
   };
+  const onClickButtonLogin = () => {
+    setComponente('Home')
+    console.log(`¡Se presionó el botón del inicio!`);
+  };
 
   return (
     <div>
+      {componente === 'Login' && (
+        <Login clickInicio={onClickButtonHome}/>
+      )}
       {componente === 'Home' && (<div className="d-flex flex-column align-items-center">
         <h1 className='mt-4 text-primary'>Trabajo Práctico DDS 2023</h1>
         <div className="btn-group mt-4 mb-4" role="group">
@@ -48,6 +56,13 @@ function App() {
           <button type="button" className="btn btn-primary" onClick={onClickButtonProductos}>Productos</button>
           <button type="button" className="btn btn-warning" onClick={onClickButtonProveedores}>Proveedores</button>
           <button type="button" className="btn" style={{ backgroundColor: 'purple', color: 'white' }} onClick={onClickButtonVentas}>Ventas</button>
+        </div>
+        <div className='container'>
+          <div className='row'>
+            <div className="col-12">
+              <button className=''></button>
+            </div>
+          </div>
         </div>
         <p className="small">Böhm, Marc 75184 - Rovezzi, Alexis 79448 - Menéndez, Benjamín 88147 - Pero, Luca 87455 - Barahona, Abel 48739</p>
       </div>)}
